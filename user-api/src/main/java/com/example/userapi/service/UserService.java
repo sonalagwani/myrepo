@@ -1,5 +1,6 @@
 package com.example.userapi.service;
 
+import com.example.userapi.dto.CreateUserRequest;
 import com.example.userapi.model.User;
 import com.example.userapi.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User saveUser(User user) {
+    public User saveUser(CreateUserRequest request) {
+        User user = new User(request.getName(), request.getCity());
         return userRepository.save(user);
     }
 

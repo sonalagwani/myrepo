@@ -1,5 +1,6 @@
 package com.example.userapi.controller;
 
+import com.example.userapi.dto.CreateUserRequest;
 import com.example.userapi.model.User;
 import com.example.userapi.service.UserService;
 import jakarta.validation.Valid;
@@ -35,8 +36,8 @@ public class UserController {
      * }
      */
     @PostMapping
-    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
-        User savedUser = userService.saveUser(user);
+    public ResponseEntity<User> createUser(@Valid @RequestBody CreateUserRequest request) {
+        User savedUser = userService.saveUser(request);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 
