@@ -23,3 +23,14 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# Eclipse
+.classpath
+.project
+.settings/
